@@ -21,7 +21,7 @@ following features:
 - User can edit his/her comments
 - User can delete his/her comments
 
-Live demo of the library: [here](#)
+Live demo of the library: [here](https://tecklens.github.io/shadcn-comments/)
 
 ---
 
