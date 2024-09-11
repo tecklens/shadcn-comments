@@ -29,7 +29,6 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        shell: bash
         working-directory: ./examples/vite-tailwind-app
     steps:
       - name: Checkout
