@@ -12,10 +12,10 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "shadcn-comments": "1.0.0"
+    "shadcn-comments": "file:../.."
   },
   "devDependencies": {
-    "@types/react": "^18.2.25",
+    "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
     "@typescript-eslint/eslint-plugin": "^5.57.1",
     "@typescript-eslint/parser": "^5.57.1",

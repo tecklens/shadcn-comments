@@ -79,6 +79,7 @@ export default function DemoComment() {
           setValue(val)
         }}
         className={''}
+        allowUpVote={true}
       />
     </div>
   )

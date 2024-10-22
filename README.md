@@ -21,7 +21,7 @@ following features:
 - User can edit his/her comments
 - User can delete his/her comments
 
-Live demo of the library: [here](https://tecklens.github.io/shadcn-comments/)
+Live demo of the library: [here](#)
 
 ---
 
@@ -164,4 +164,4 @@ export type Comment = {
 
 ## License
 
-MIT © [dieptv1999](https://github.com/dieptv1999)# shadcn-comments
+MIT © [dieptv1999](https://github.com/dieptv1999)

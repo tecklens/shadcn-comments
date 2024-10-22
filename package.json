@@ -30,6 +30,7 @@
     "@mdx-js/react": "^3.0.1",
     "@mdxeditor/editor": "^3.11.3",
     "@radix-ui/react-avatar": "^1.0.3",
+    "@radix-ui/react-popover": "^1.1.2",
     "@radix-ui/react-slot": "^1.0.2",
     "class-variance-authority": "^0.6.0",
     "clsx": "^1.2.1",
