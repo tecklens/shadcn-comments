@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import {Avatar, AvatarFallback, AvatarImage} from "./Avatar";
 import {ArrowUpIcon, CircleIcon, SmileIcon} from "lucide-react";
 import {EditorComment} from "./EditorComment";
-import {ACTIONS, Comment} from "../types/comment";
+import {ACTIONS, ACTIONS_TYPE, Comment} from "../types/comment";
 import {User} from "../types/user";
 import {EditorCommentStyle2} from "./EditorCommentStyle2";
 import {makeid} from "../lib/utils";
@@ -41,7 +41,7 @@ export const CommentCard = ({
                             }: CommentCardProps) => {
     const [replying, setReplying] = useState(false)
 
-    const actions = ACTIONS.filter(e => comment.actions?.includes(e.id))
+    const actions = ACTIONS.filter(e => comment.actions && comment.actions[e.id] && comment.selectedActions?.includes(e.id))
 
     return (
         <div className={'flex flex-col gap-1'}>
@@ -73,11 +73,31 @@ export const CommentCard = ({
                                         </div>
                                     </PopoverTrigger>
                                     <PopoverContent className={'p-0.5'} align={'start'}>
-                                        <EmojiSelect value={comment.actions} onValueChange={(v) => {
-                                            onChange({
-                                                actions: v,
-                                            })
-                                        }} className={''}/>
+                                        <EmojiSelect
+                                            value={comment.selectedActions}
+                                            onSelect={(v, changeValue: ACTIONS_TYPE) => {
+                                                const currentAmount = (comment.actions || {})[changeValue];
+                                                onChange({
+                                                    selectedActions: v,
+                                                    actions: {
+                                                        ...(comment.actions || {}),
+                                                        [changeValue]: currentAmount ? currentAmount + 1 : 1,
+                                                    }
+                                                })
+                                            }}
+                                            onUnSelect={(v, changeValue: ACTIONS_TYPE) => {
+                                                const currentAmount = (comment.actions || {})[changeValue];
+                                                if (currentAmount && currentAmount > 0)
+                                                    onChange({
+                                                        selectedActions: v,
+                                                        actions: {
+                                                            ...(comment.actions || {}),
+                                                            [changeValue]: currentAmount - 1,
+                                                        }
+                                                    })
+                                            }}
+                                            className={''}
+                                        />
                                     </PopoverContent>
                                 </Popover>
                             </div>
@@ -87,7 +107,7 @@ export const CommentCard = ({
                                     className={`border ${comment.isUpvoted ? `border-[#4493f8] text-[#4493f8]` : ''} rounded-xl px-2 py-0.5 inline-flex gap-1 items-center cursor-pointer`}
                                 >
                                     <span>{e.emoji}</span>
-                                    <span>369</span>
+                                    <span>{(comment.actions ?? {})[e.id]}</span>
                                 </div>
                             ))}
                         </div>}

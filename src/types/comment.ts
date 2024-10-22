@@ -65,6 +65,7 @@ export type Comment = {
   replies?: Comment[],
   createdAt: Date;
   upvote?: number;
+  actions?: {[key in ACTIONS_TYPE]: number};
   isUpvoted?: boolean;
-  actions?: ACTIONS_TYPE[];
+  selectedActions?: ACTIONS_TYPE[];
 }
