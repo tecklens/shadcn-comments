@@ -1,7 +1,7 @@
 import {useState} from "react";
 import {Terminal} from "lucide-react";
 import {useTheme} from "./theme-provider.tsx";
-import {Alert, AlertDescription, AlertTitle, Button, CommentSection} from 'shadcn-comments'
+import {Alert, AlertDescription, AlertTitle, Button, CommentSection, ACTIONS_TYPE} from 'shadcn-comments'
 
 export default function DemoComment() {
   const {theme, setTheme} = useTheme()
@@ -16,7 +16,11 @@ export default function DemoComment() {
       id: '2',
       text: 'Another utility is to add text adornments, doing some simple typechecking so if a string is passed you can style a background, else render the react node.',
       replies: [],
-      createdAt: new Date('2024-06-01')
+      createdAt: new Date('2024-06-01'),
+      selectedActions: [ACTIONS_TYPE.UPVOTE],
+      actions: {
+        [ACTIONS_TYPE.UPVOTE]: 1
+      }
     },
     {
       user: {
