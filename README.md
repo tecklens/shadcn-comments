@@ -172,7 +172,7 @@ export type Comment = {
 ---
 ## Change log 
 
-v1.0.1: add edit/delete/copy link/actions emoji for comment
+v1.0.3: add edit/delete/copy link/actions emoji for comment
 --- 
 
 ## License

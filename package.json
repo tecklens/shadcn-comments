@@ -2,7 +2,7 @@
   "name": "shadcn-comments",
   "description": "Shadcn React component library for a functioning comments section",
   "private": false,
-  "version": "1.0.1",
+  "version": "1.0.3",
   "type": "module",
   "main": "dist/index.cjs.js",
   "module": "dist/index.es.js",
