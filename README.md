@@ -169,7 +169,10 @@ export type Comment = {
   createdAt: Date;
 }
 ```
+---
+## Change log 
 
+v1.0.1: add edit/delete/copy link/actions emoji for comment
 --- 
 
 ## License
