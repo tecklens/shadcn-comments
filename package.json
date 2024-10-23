@@ -13,7 +13,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/dieptv1999/shadcn-comments"
+    "url": "https://github.com/tecklens/shadcn-comments"
   },
   "scripts": {
     "dev": "vite",
