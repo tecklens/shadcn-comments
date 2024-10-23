@@ -1,11 +1,9 @@
-import React from "react";
-import { useState, useEffect } from "react";
-import { jsx, jsxs, Fragment } from "react/jsx-runtime";
-import { evaluate } from "@mdx-js/mdx";
-
-import type { FC, ReactNode } from "react";
-import type { MDXProps } from "mdx/types";
-import type { EvaluateOptions } from "@mdx-js/mdx";
+import type {ReactNode} from "react";
+import React, {useEffect, useState} from "react";
+import {Fragment, jsx, jsxs} from "react/jsx-runtime";
+import type {EvaluateOptions} from "@mdx-js/mdx";
+import {evaluate} from "@mdx-js/mdx";
+import type {MDXProps} from "mdx/types";
 
 type ReactMDXContent = (props: MDXProps) => ReactNode;
 type Runtime = Pick<EvaluateOptions, "jsx" | "jsxs" | "Fragment">;

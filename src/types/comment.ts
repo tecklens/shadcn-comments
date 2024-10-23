@@ -20,6 +20,7 @@ export enum ACTIONS_TYPE {
   HEART = 'HEART',
   ROCKET = 'ROCKET',
   EYE = 'EYE',
+  UPVOTE = 'UPVOTE'
 }
 
 export const ACTIONS = [
@@ -64,8 +65,7 @@ export type Comment = {
   text: string,
   replies?: Comment[],
   createdAt: Date;
-  upvote?: number;
   actions?: {[key in ACTIONS_TYPE]: number};
-  isUpvoted?: boolean;
   selectedActions?: ACTIONS_TYPE[];
+  allowUpvote?: boolean;
 }
