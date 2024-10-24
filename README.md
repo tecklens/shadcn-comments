@@ -53,7 +53,7 @@ Following is a basic example to start testing the library in your project. This 
 | onVoteChange | (checked: boolean) => void    | false   |
 
 ```typescript
-iimport {useState} from "react";
+import {useState} from "react";
 import {Terminal} from "lucide-react";
 import {useTheme} from "./theme-provider.tsx";
 import {Alert, AlertDescription, AlertTitle, Button, CommentSection, ACTIONS_TYPE} from 'shadcn-comments'
