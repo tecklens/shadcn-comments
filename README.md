@@ -1,7 +1,7 @@
 # Shadcn Comments
 
 ---
-
+[Demo](https://shadcn-comment.pages.dev/)
 ## Install 
 
 Install the latest version!
@@ -52,7 +52,7 @@ Following is a basic example to start testing the library in your project. This 
 | allowUpVote  | boolean                       | false   |
 | onVoteChange | (checked: boolean) => void    | false   |
 
-```typescript
+```tsx
 import {useState} from "react";
 import {Terminal} from "lucide-react";
 import {useTheme} from "./theme-provider.tsx";
@@ -72,9 +72,11 @@ export default function DemoComment() {
             text: 'Another utility is to add text adornments, doing some simple typechecking so if a string is passed you can style a background, else render the react node.',
             replies: [],
             createdAt: new Date('2024-06-01'),
-            selectedActions: [ACTIONS_TYPE.UPVOTE],
+            selectedActions: [ACTIONS_TYPE.UPVOTE, ACTIONS_TYPE.ROCKET, ACTIONS_TYPE.HEART],
             actions: {
-                [ACTIONS_TYPE.UPVOTE]: 1
+                [ACTIONS_TYPE.UPVOTE]: 1,
+                [ACTIONS_TYPE.ROCKET]: 10,
+                [ACTIONS_TYPE.HEART]: 10,
             }
         },
         {
@@ -108,40 +110,40 @@ export default function DemoComment() {
 
     return (
         <div className={`flex align-center justify-start flex-col min-h-[100vh] p-3 md:p-4`}>
-    <div className={'flex flex-col w-full items-center'}>
-    <h1 className="text-xl md:text-3xl font-bold underline">
-        Built using shadcn-comments
-    </h1>
-    <div className='py-4'>
-    <Button onClick={toggleDarkMode}>Toggle Dark Mode</Button>
-    </div>
-    <div className='py-4'>
-    <Alert>
-        <Terminal className="h-4 w-4"/>
-        <AlertTitle>Heads up!</AlertTitle>
-    <AlertDescription>
-    You can add components and dependencies to your app using the cli.
-    </AlertDescription>
-    </Alert>
-    </div>
-    </div>
-    <CommentSection
-    theme={theme}
-    currentUser={{
-        id: '1',
-            userProfile: '',
-            fullName: 'Me',
-            avatarUrl: 'https://github.com/shadcn.png'
-    }}
-    value={value}
-    onChange={(val) => {
-        setValue(val)
-    }}
-    className={''}
-    allowUpVote={true}
-    />
-    </div>
-)
+            <div className={'flex flex-col w-full items-center'}>
+                <h1 className="text-xl md:text-3xl font-bold underline">
+                    Built using shadcn-comments
+                </h1>
+                <div className='py-4'>
+                    <Button onClick={toggleDarkMode}>Toggle Dark Mode</Button>
+                </div>
+                <div className='py-4'>
+                    <Alert>
+                        <Terminal className="h-4 w-4"/>
+                        <AlertTitle>Heads up!</AlertTitle>
+                        <AlertDescription>
+                            You can add components and dependencies to your app using the cli.
+                        </AlertDescription>
+                    </Alert>
+                </div>
+            </div>
+            <CommentSection
+                theme={theme}
+                currentUser={{
+                    id: '1',
+                    userProfile: '',
+                    fullName: 'Me',
+                    avatarUrl: 'https://github.com/shadcn.png'
+                }}
+                value={value}
+                onChange={(val) => {
+                    setValue(val)
+                }}
+                className={''}
+                allowUpVote={true}
+            />
+        </div>
+    )
 }
 ```
 ---
