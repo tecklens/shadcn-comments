@@ -49,12 +49,12 @@
     "eslint": "^8.38.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.3.4",
-    "postcss": "^8.4.23",
+    "postcss": "^8.4.47",
     "postcss-cli": "^10.1.0",
     "prop-types": "^15.8.1",
     "tailwindcss": "^3.3.2",
     "typescript": "^5.0.2",
-    "vite": "^4.3.2",
+    "vite": "^5.4.6",
     "vite-plugin-dts": "^2.3.0"
   }
 }

@@ -17,9 +17,11 @@ export default function DemoComment() {
       text: 'Another utility is to add text adornments, doing some simple typechecking so if a string is passed you can style a background, else render the react node.',
       replies: [],
       createdAt: new Date('2024-06-01'),
-      selectedActions: [ACTIONS_TYPE.UPVOTE],
+      selectedActions: [ACTIONS_TYPE.UPVOTE, ACTIONS_TYPE.ROCKET, ACTIONS_TYPE.HEART],
       actions: {
-        [ACTIONS_TYPE.UPVOTE]: 1
+        [ACTIONS_TYPE.UPVOTE]: 1,
+        [ACTIONS_TYPE.ROCKET]: 10,
+        [ACTIONS_TYPE.HEART]: 10,
       }
     },
     {
